@@ -22,11 +22,11 @@ export const Contact = () => {
 
     return <section id="contact" className="min-h-screen flex items-center justify-center py-20">
         <RevealOnScroll>
-            <div className="px-4 w-150">
+            <div className="min-h-screen flex flex-col px-4 w-150">
                 <h2 className="text-3xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-cyan-300 bg-clip-text text-transparent text-center">Get In Touch</h2>
                 <form className="space-y-6" onSubmit={hanldeSubmit}>
                     <div className="relative">
-                        <input type="text" id="name" name="name" required value={formData.name} className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition focus:outline-none focus:border-blue-500 focus:bg-blue-500/5" placeholder="Name..." onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
+                        <input type="text" id="name" name="name" required value={formData.name} className="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white transition  focus:outline-none focus:border-blue-500 focus:bg-blue-500/5" placeholder="Name..." onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
                     </div>
 
                     <div className="relative">

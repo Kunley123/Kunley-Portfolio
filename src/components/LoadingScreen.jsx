@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 
 export const LoadingScreen = ({ onComplete }) => {
     const [text, setText] = useState("")
-    const fullText = "<Hello world />";
+    const fullText = "Welcome to Kunley Dev Portfolio";
 
     useEffect(() => {
         let index = 0;
