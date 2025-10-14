@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { RevealOnScroll } from './../RevealOnScroll.jsx';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 
 export const Contact = () => {
@@ -10,10 +10,18 @@ export const Contact = () => {
         message: ''
     });
 
+    console.log({
+        service: import.meta.env.VITE_SERVICE_ID,
+        template: import.meta.env.VITE_TEMPLATE_ID,
+        publickey: import.meta.env.VITE_PUBLIC_KEY
+    })
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log("submitted")
+
 
         emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY).then((result) => {
             alert("Messsage Sent!")
