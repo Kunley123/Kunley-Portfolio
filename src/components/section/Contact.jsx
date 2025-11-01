@@ -26,7 +26,10 @@ export const Contact = () => {
         emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, e.target, import.meta.env.VITE_PUBLIC_KEY).then((result) => {
             alert("Messsage Sent!")
             setFormData({ name: '', email: '', message: '' })
-        }).catch(() => alert("Oops! Something went wrong, Please try again."))
+        }).catch((error) => {
+            console.error("Emailjs error:", error)
+            alert("Error: " + JSON.stringify(error));
+        })
     }
 
     return <section id="contact" className="min-h-screen flex items-center justify-center py-20">
